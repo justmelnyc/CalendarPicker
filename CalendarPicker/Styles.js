@@ -8,7 +8,8 @@ var StyleSheet = require('react-native').StyleSheet;
 
 var styles = StyleSheet.create({
   calendar: {
-    marginTop: 10
+    marginTop: 10,
+    alignItems: 'center',
   },
   dayWrapper: {
     backgroundColor: 'rgba(0,0,0,0.0)',
@@ -51,36 +52,43 @@ var styles = StyleSheet.create({
   monthLabel: {
     fontSize: 16,
     color: '#000',
-    textAlign: 'center'
   },
 
   headerWrapper: {
-    alignItems: 'center',
+    flex: 1,
     flexDirection: 'row',
+    flexWrap: 'nowrap',
+    justifyContent: 'space-between',
     marginBottom: 10,
     paddingTop: 5,
     paddingBottom: 3,
-    backgroundColor: 'rgba(0,0,0,0.0)'
+    backgroundColor: 'rgba(0,0,0,0.0)',
+  },
+
+  monthWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
 
   prevMonthSelector: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   },
 
   nextMonthSelector: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
 
   prev: {
-    textAlign: 'left'
+    
   },
 
   next: {
-    textAlign: 'right'
+
   },
 
   weeks: {

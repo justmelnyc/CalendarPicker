@@ -226,13 +226,13 @@ var HeaderControls = React.createClass({
 
   render() {
     return (
-      <View style={styles.headerWrapper}>
+      <View style={[styles.headerWrapper, {width: this.props.screenWidth}]}>
         <View style={styles.prevMonthSelector}>
           <TouchableOpacity onPress={this.getPrevious}>
             <Text style={styles.prev}>{this.props.previousTitle || 'Previous'}</Text>
           </TouchableOpacity>
         </View>
-        <View>
+        <View style={styles.monthWrapper}>
           <Text style={styles.monthLabel}>
             { (this.props.months || MONTHS)[this.state.selectedMonth] } { this.props.year }
           </Text>
@@ -242,7 +242,6 @@ var HeaderControls = React.createClass({
             <Text style={styles.next}>{this.props.nextTitle || 'Next'}</Text>
           </TouchableOpacity>
         </View>
-
       </View>
     );
   }
@@ -320,6 +319,7 @@ var CalendarPicker = React.createClass({
           months={this.props.months}
           previousTitle={this.props.previousTitle}
           nextTitle={this.props.nextTitle}
+          screenWidth={this.props.screenWidth}
         />
 
         <WeekDaysLabels
